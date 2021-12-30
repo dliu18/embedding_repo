@@ -1,0 +1,12 @@
+{
+    "graphMetaData": [
+    	{"name": "wikipedia", "edgelistFilename": "edgelists/wikipedia.edgelist"},
+        {"name": "protein-protein", "edgelistFilename": "edgelists/ppi.edgelist"},
+        {"name": "Facebook", "edgelistFilename": "edgelists/facebook_combined.edgelist"},
+        {"name": "AutonomousSystems", "edgelistFilename": "edgelists/AS.edgelist"},
+        {"name": "ca-HepTh", "edgelistFilename": "edgelists/ca-HepTh.edgelist"},
+        {"name": "LastFM", "edgelistFilename": "edgelists/lastfm_asia_edges.edgelist"}
+    ],
+    "algNames": ["HGCN"],
+    "d_s": [64]
+}
