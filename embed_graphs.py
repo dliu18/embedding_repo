@@ -47,7 +47,7 @@ def sdne_lambda(graphName, nx_graph, d):
 	emb_dict = model.get_embeddings()
 	return np.array([emb_dict[node_name] for node_name in nx_graph.nodes()])
 
-def pca_lambda(graphName, nx_graph, d):
+def svd_lambda(graphName, nx_graph, d):
 	return TruncatedSVD(n_components=d, random_state=random_state)\
 			.fit_transform(nx.linalg.graphmatrix.adjacency_matrix(nx_graph))
 
@@ -104,8 +104,8 @@ def get_embedding_algorithms(algNames):
 	algLambdas = []
 	if "SDNE" in algNames:
 		algLambdas.append({"name": "SDNE", "method": sdne_lambda})
-	if "PCA" in algNames:
-		algLambdas.append({"name": "PCA", "method": pca_lambda})
+	if "SVD" in algNames:
+		algLambdas.append({"name": "SVD", "method": svd_lambda})
 	if "HOPE" in algNames:
 		algLambdas.append({"name": "HOPE", "method": hope_lambda})
 	if "LaplacianEigenmap" in algNames:
