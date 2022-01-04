@@ -23,11 +23,13 @@ The remainder of this documentation provides more detail about the graphs, embed
 
 The edgelists for all of the above graphs are stored in `edgelists/`. 
 
+For sources that provide graphs in Matlab's `.mat` format, edgelist were generated with the script in `util/convert_mat_edglist.py`.
+
 ## Algorithms 
 
 | Node | Implementation | Notes |
 | ----------- | ----------- | ----------- |
-| PCA | [sklearn.decomposition.TruncatedSVD](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.TruncatedSVD.html)| |
+| SVD | [sklearn.decomposition.TruncatedSVD](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.TruncatedSVD.html)| |
 | HOPE | [GEM](https://github.com/palash1992/GEM) | beta is set to 0.01 |
 | Laplacian Eigenmap | [sklearn.manifold.SpectralEmbedding](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.SpectralEmbedding.html) | |
 | Node2Vec | [(Grover and Leskovec, 2016)](https://github.com/aditya-grover/node2vec) | Local copy maintained in `node2vec/`|
@@ -38,7 +40,7 @@ The edgelists for all of the above graphs are stored in `edgelists/`.
 
 All of the embeddings were generated on the Discovery cluster with a GPU. The Discovery cluster has Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz CPUs and an NVIDIA Tesla K80 GPU. 
 
-The conda environments utilized to embed the graphs are specified in `environments/`. The `base.yml` environment was utilized to embed with PCA, HOPE, Laplacian Eigenmap, and Node2Vec; `sdne.yml` for SDNE; and `hgcn.yml` for Hyperbolic GCN. 
+The conda environments utilized to embed the graphs are specified in `environments/`. The `base.yml` environment was utilized to embed with SVD, HOPE, Laplacian Eigenmap, and Node2Vec; `sdne.yml` for SDNE; and `hgcn.yml` for Hyperbolic GCN. 
 
 When embedding with SDNE on the discovery cluster, cuda version 9.0 was loaded with `module load cuda/9.0`.
 
