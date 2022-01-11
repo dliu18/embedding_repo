@@ -7,6 +7,6 @@
     	{"name": "ca-HepTh", "edgelistFilename": "edgelists/ca-HepTh.edgelist"},
     	{"name": "LastFM", "edgelistFilename": "edgelists/lastfm_asia_edges.edgelist"}
     ],
-    "algNames": ["PCA", "HOPE", "LaplacianEigenmap", "Node2Vec"],
+    "algNames": ["SVD", "HOPE", "LaplacianEigenmap", "Node2Vec", "SDNE", "HGCN"],
     "d_s": [64]
 }
